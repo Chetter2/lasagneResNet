@@ -213,7 +213,7 @@ class LasagneSmallResNet(object):
         with np.load(model) as f:
              param_values = [f['arr_%d' % i] for i in range(len(f.files))]
 
-        lasagne.layers.set_all_param_values(network, param_values)
+        lasagne.layers.set_all_param_values(self._network, param_values)
 
 if __name__ == '__main__':
     data = data_loader.get_CIFAR10_data()
